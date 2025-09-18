@@ -37,7 +37,6 @@ struct PostsRepository: PostsRepositoryProtocol {
         let document = postsReference.document(post.id.uuidString)
         try await document.delete()
     }
-    
 }
 
 #if DEBUG
