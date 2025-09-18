@@ -7,12 +7,13 @@
 
 import SwiftUI
 
+
 struct PostsList: View {
     @StateObject var viewModel = PostsViewModel()
     
     @State private var searchText = ""
     @State private var showNewPostForm = false
-    
+        
     var body: some View {
         
         NavigationStack {
@@ -27,7 +28,7 @@ struct PostsList: View {
                 case let .loaded(posts):
                     List(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
-                            PostRow(post: post)
+                            PostRow(post: post, delete: {})
                         }
                     }
                     .searchable(text: $searchText)
