@@ -14,6 +14,9 @@ struct PostRow: View {
     let post: Post
     let delete: DeleteAction
     
+    @State private var showConfirmationDialog = false
+    @State private var error: Error?
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -31,22 +34,36 @@ struct PostRow: View {
             Text(post.content)
             HStack{
                 Spacer()
-                Button(role: .destructive, action: {deletePost()}){
+                Button(role: .destructive, action: {
+                    showConfirmationDialog = true
+                }){
                     Label("Delete", systemImage: "trash")
                 }
+                .buttonStyle(.borderless)
                 .labelStyle(.iconOnly)
             }
         }
+        .confirmationDialog("Are you sure you want to delete this post?", isPresented: $showConfirmationDialog, titleVisibility: .visible){
+            Button("Delete", role: .destructive, action: deletePost)
+        }
+        .alert("Cannot Delete Post", error: $error)
         .padding(.vertical)
     }
     
     func deletePost() {
         Task{
-            try! await delete()
+            do{
+                try await delete()
+            }
+            catch{
+                print("[PostRow] Cannot delete post \(error.localizedDescription)")
+                self.error = error
+            }
         }
     }
     
 }
+
 
 struct PostRow_Previews: PreviewProvider {
     static var previews: some View {
