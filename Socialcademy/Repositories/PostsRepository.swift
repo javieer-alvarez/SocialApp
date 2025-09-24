@@ -9,17 +9,18 @@ import SwiftUI
 import FirebaseFirestore
 
 protocol PostsRepositoryProtocol {
-    func fetchPosts() async throws -> [Post]
+    func fetchAllPosts() async throws -> [Post]
     func create(_ post: Post) async throws
     func delete(_ post: Post) async throws
     func favorite(_ post: Post) async throws
     func unfavorite(_ post: Post) async throws
+    func fetchFavoritePosts() async throws -> [Post]
 }
 
 struct PostsRepository: PostsRepositoryProtocol {
     let postsReference = Firestore.firestore().collection("posts_v1")
     
-    func fetchPosts() async throws -> [Post] {
+    func fetchAllPosts() async throws -> [Post] {
         let snapshot = try await postsReference
             .order(by: "timestamp", descending: true)
             .getDocuments()
@@ -58,7 +59,7 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
     
     var posts: [Post] = []
     
-    func fetchPosts() async throws -> [Post] {
+    func fetchAllPosts() async throws -> [Post] {
         return try await state.simulate()
     }
     
