@@ -35,7 +35,7 @@ class PostRowViewModel: ObservableObject{
                 try await action()
             }
             catch{
-                print("[PostRowViewModel] Coundn't permorm action \(error)")
+                print("[PostRowViewModel] Coundn't perform action \(error)")
                 self.error = error
             }
         }
