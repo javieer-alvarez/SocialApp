@@ -20,12 +20,14 @@ class AuthViewModel: ObservableObject{
         authService.$isAuthenticated.assign(to: &$isAuthenticated)
     }
     
-    func signIn() async throws {
+    func signIn() {
         Task{
-            try await authService.signIn(email: email, password: password)
-        }
-        catch {
-            print("[AuthViewModel], Error trying to sign in \(error)")
+            do{
+                try await authService.signIn(email: email, password: password)
+            }
+            catch {
+                print("[AuthViewModel], Error trying to sign in \(error)")
+            }
         }
     }
 }

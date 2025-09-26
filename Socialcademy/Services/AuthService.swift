@@ -11,8 +11,8 @@ import FirebaseAuth
 class AuthService: ObservableObject {
     @Published var isAuthenticated = false
     
-    private let Auth.auth()
-    private var listener = AuthStateDidChangeListenerHandle?
+    private let auth = Auth.auth()
+    private var listener: AuthStateDidChangeListenerHandle?
     
     init(){
         listener = auth.addStateDidChangeListener { [weak self] _, user in
@@ -29,8 +29,8 @@ class AuthService: ObservableObject {
         try await auth.signIn(withEmail: email, password: password)
     }
     
-    func signOut() async throws {
-        try await auth.signOut()
+    func signOut() throws {
+        try auth.signOut()
     }
     
 }

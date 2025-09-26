@@ -11,6 +11,7 @@
 		A11A21D22E6605900015D48F /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21D12E6605900015D48F /* FirebaseAnalyticsCore */; };
 		A11A21DA2E6605900015D48F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21D92E6605900015D48F /* FirebaseAuth */; };
 		A11A21DE2E6605900015D48F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21DD2E6605900015D48F /* FirebaseCore */; };
+		A1BE69292E8711050003DC64 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1BE69282E8711050003DC64 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 				A11A21D02E6605900015D48F /* FirebaseAnalytics in Frameworks */,
 				A11A21D22E6605900015D48F /* FirebaseAnalyticsCore in Frameworks */,
 				A11A21DA2E6605900015D48F /* FirebaseAuth in Frameworks */,
+				A1BE69292E8711050003DC64 /* FirebaseFirestore in Frameworks */,
 				A11A21DE2E6605900015D48F /* FirebaseCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +46,7 @@
 			isa = PBXGroup;
 			children = (
 				A11A21C02E6603C60015D48F /* Socialcademy */,
+				A1BE69272E8711050003DC64 /* Frameworks */,
 				A11A21BF2E6603C60015D48F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +57,13 @@
 				A11A21BE2E6603C60015D48F /* Socialcademy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A1BE69272E8711050003DC64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +90,7 @@
 				A11A21D12E6605900015D48F /* FirebaseAnalyticsCore */,
 				A11A21D92E6605900015D48F /* FirebaseAuth */,
 				A11A21DD2E6605900015D48F /* FirebaseCore */,
+				A1BE69282E8711050003DC64 /* FirebaseFirestore */,
 			);
 			productName = Socialcademy;
 			productReference = A11A21BE2E6603C60015D48F /* Socialcademy.app */;
@@ -374,6 +385,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A11A21CC2E6605900015D48F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		A1BE69282E8711050003DC64 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A11A21CC2E6605900015D48F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
