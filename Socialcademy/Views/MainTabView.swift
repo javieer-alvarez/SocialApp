@@ -17,6 +17,9 @@ struct MainTabView: View {
             Tab("Favorites", systemImage: "heart"){
                 PostsList(viewModel: PostsViewModel(filter: .favorites))
             }
+            Tab("Profile", systemImage: "person"){
+                ProfileView()
+            }
         }
     }
 }
