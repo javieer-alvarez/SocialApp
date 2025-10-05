@@ -18,7 +18,7 @@ protocol PostsRepositoryProtocol {
 }
 
 struct PostsRepository: PostsRepositoryProtocol {
-    let postsReference = Firestore.firestore().collection("posts_v1")
+    let postsReference = Firestore.firestore().collection("posts_v2")
     
     private func fetchPosts(from query: Query) async throws -> [Post] {
         return try await query
