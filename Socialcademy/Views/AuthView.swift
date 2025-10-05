@@ -48,8 +48,9 @@ private extension AuthView {
                 Button("Sign In", action: dismiss.callAsFunction)
                     .padding()
             }
-            .navigationBarHidden(true)
             .onSubmit({viewModel.submit()})
+            .alert("Cannot Create Account", error: $viewModel.error)
+            .disabled(viewModel.isWorking)
         }
     }
     
@@ -72,8 +73,11 @@ private extension AuthView {
                     .padding()
             }
             .onSubmit({viewModel.submit()})
+            .alert("Cannot Sign In", error: $viewModel.error)
+            .disabled(viewModel.isWorking)
         }
     }
+
     
     struct Form<Content: View, Footer: View>: View {
         

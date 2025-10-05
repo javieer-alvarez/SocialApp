@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct PrimaryButtonStyle: ButtonStyle {
+    
+    @Environment(\.isEnabled) private var enabled
+    
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
+        Group{
+            if enabled {
+                configuration.label
+            }
+            else{
+                ProgressView()
+            }
+        }
             .padding()
             .frame(maxWidth: .infinity)
             .foregroundStyle(.white)
