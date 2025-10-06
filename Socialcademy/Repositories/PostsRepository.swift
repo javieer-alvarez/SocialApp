@@ -9,6 +9,9 @@ import SwiftUI
 import FirebaseFirestore
 
 protocol PostsRepositoryProtocol {
+    
+    var user: User { get }
+    
     func fetchAllPosts() async throws -> [Post]
     func create(_ post: Post) async throws
     func delete(_ post: Post) async throws
@@ -19,6 +22,8 @@ protocol PostsRepositoryProtocol {
 
 struct PostsRepository: PostsRepositoryProtocol {
     let postsReference = Firestore.firestore().collection("posts_v2")
+    
+    let user: User
     
     private func fetchPosts(from query: Query) async throws -> [Post] {
         return try await query
@@ -62,6 +67,7 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
     
     let state: Loadable<[Post]>
     
+    var user = User.testUser
     var posts: [Post] = []
     
     func fetchAllPosts() async throws -> [Post] {
