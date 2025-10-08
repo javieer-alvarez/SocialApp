@@ -32,10 +32,13 @@ struct PostRow: View {
             HStack{
                 FavoriteButton(isFavorite: viewModel.isFavorite, action: viewModel.favoritePost)
                 Spacer()
-                Button(role: .destructive, action: {
-                    showConfirmationDialog = true
-                }){
-                    Label("Delete", systemImage: "trash")
+                
+                if viewModel.canDeletePost{
+                    Button(role: .destructive, action: {
+                        showConfirmationDialog = true
+                    }){
+                        Label("Delete", systemImage: "trash")
+                    }
                 }
             }
             .buttonStyle(.borderless)
