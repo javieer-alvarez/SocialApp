@@ -17,9 +17,7 @@ struct PostRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                Text(viewModel.author.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+                AuthorView(author: viewModel.author)
                 Spacer()
                 Text(viewModel.timestamp.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption)
@@ -72,6 +70,26 @@ private extension PostRow {
             .animation( .default, value: isFavorite)
         }
     }
+}
+
+private extension PostRow {
+    
+    struct AuthorView: View {
+        let author: User
+        
+        @EnvironmentObject private var factory: ViewModelFactory
+        
+        var body: some View {
+            NavigationLink{
+                PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
+            } label: {
+                Text(author.name)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+            }
+        }
+    }
+    
 }
 
 
