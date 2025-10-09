@@ -40,13 +40,12 @@ struct PostRow: View {
                 }
             }
             .buttonStyle(.borderless)
-            .labelStyle(.iconOnly)
         }
         .confirmationDialog("Are you sure you want to delete this post?", isPresented: $showConfirmationDialog, titleVisibility: .visible){
             Button("Delete", role: .destructive, action: viewModel.deletePost)
         }
         .alert("Error", error: $viewModel.error)
-        .padding(.vertical)
+        .padding()
     }
     
 }
@@ -92,11 +91,6 @@ private extension PostRow {
     
 }
 
-
-struct PostRow_Previews: PreviewProvider {
-    static var previews: some View {
-        List {
-            PostRow(viewModel: PostRowViewModel(post: Post.testPost, deleteAction: {}, favoriteAction: {}))
-        }
-    }
+#Preview(traits: .sizeThatFitsLayout) {
+    PostRow(viewModel: PostRowViewModel(post: Post.testPost, deleteAction: {}, favoriteAction: {}))
 }

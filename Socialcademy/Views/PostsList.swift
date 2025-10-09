@@ -26,13 +26,15 @@ struct PostsList: View {
                 case .empty:
                     EmptyListView(title: "No posts yet", message: "Be the first to create one!")
                 case let .loaded(posts):
-                    List(posts) { post in
-                        if searchText.isEmpty || post.contains(searchText) {
-                            PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
+                    ScrollView {
+                        ForEach(posts) { post in
+                            if searchText.isEmpty || post.contains(searchText) {
+                                PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
+                            }
                         }
+                        .searchable(text: $searchText)
+                        .animation(.default, value: posts)
                     }
-                    .searchable(text: $searchText)
-                    .animation(.default, value: posts)
                 }
             }
             .navigationTitle(viewModel.title)
