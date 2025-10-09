@@ -12,7 +12,7 @@ class PostsViewModel: ObservableObject {
     @Published var posts: Loadable<[Post]> = .loading
     
     private let postsRepository: PostsRepositoryProtocol
-    private let filter: Filter
+    internal let filter: Filter
     
     var title: String {
         switch filter {
@@ -30,7 +30,7 @@ class PostsViewModel: ObservableObject {
         self.postsRepository = postsRepository
     }
     
-    func makePostRowViewModel(for post: Post) -> PostRowViewModel {
+    func makePostRowViewModel(for post: Post, by filter: Filter) -> PostRowViewModel {
         
         let deleteAction = {
             [weak self] in
@@ -49,7 +49,8 @@ class PostsViewModel: ObservableObject {
         return PostRowViewModel(
             post: post,
             deleteAction: postsRepository.canDelete(post) ? deleteAction : nil,
-            favoriteAction: favoriteAction
+            favoriteAction: favoriteAction,
+            currentFilter: filter
         )
     }
     

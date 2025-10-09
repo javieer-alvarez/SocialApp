@@ -28,7 +28,7 @@ struct PostsList: View {
                     ScrollView {
                         ForEach(posts) { post in
                             if searchText.isEmpty || post.contains(searchText) {
-                                PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
+                                PostRow(viewModel: viewModel.makePostRowViewModel(for: post, by: viewModel.filter))
                             }
                         }
                         .animation(.default, value: posts)

@@ -24,10 +24,13 @@ class PostRowViewModel: ObservableObject{
     
     var canDeletePost: Bool { deleteAction != nil}
     
-    init(post: Post, deleteAction: Action?, favoriteAction: @escaping Action){
+    let currentFilter: PostsViewModel.Filter
+    
+    init(post: Post, deleteAction: Action?, favoriteAction: @escaping Action, currentFilter: PostsViewModel.Filter){
         self.post = post
         self.deleteAction = deleteAction
         self.favoriteAction = favoriteAction
+        self.currentFilter = currentFilter
     }
     
     

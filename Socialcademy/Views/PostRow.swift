@@ -16,7 +16,7 @@ struct PostRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
-                AuthorView(author: viewModel.author)
+                AuthorView(author: viewModel.author, currentFilter: viewModel.currentFilter)
                 Spacer()
                 Text(viewModel.timestamp.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption)
@@ -74,22 +74,28 @@ private extension PostRow {
     
     struct AuthorView: View {
         let author: User
+        let currentFilter: PostsViewModel.Filter
         
         @EnvironmentObject private var factory: ViewModelFactory
         
         var body: some View {
-            NavigationLink{
-                PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
-            } label: {
-                Text(author.name)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
+            
+            switch currentFilter {
+            case .all, .favorites:
+                NavigationLink{
+                    PostsList(viewModel: factory.makePostsViewModel(filter: .author(author)))
+                } label: {
+                    Text(author.name)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                }
+            case .author:
+                EmptyView()
             }
         }
     }
-    
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
-    PostRow(viewModel: PostRowViewModel(post: Post.testPost, deleteAction: {}, favoriteAction: {}))
+    PostRow(viewModel: PostRowViewModel(post: Post.testPost, deleteAction: {}, favoriteAction: {}, currentFilter: .all))
 }
