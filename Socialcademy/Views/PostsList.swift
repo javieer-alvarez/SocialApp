@@ -16,7 +16,6 @@ struct PostsList: View {
         
     var body: some View {
         
-        NavigationStack {
             Group {
                 switch viewModel.posts {
                 case .loading:
@@ -32,9 +31,9 @@ struct PostsList: View {
                                 PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
                             }
                         }
-                        .searchable(text: $searchText)
                         .animation(.default, value: posts)
                     }
+                    .searchable(text: $searchText)
                 }
             }
             .navigationTitle(viewModel.title)
@@ -48,7 +47,6 @@ struct PostsList: View {
             .sheet(isPresented: $showNewPostForm) {
                 NewPostForm(viewModel: viewModel.makeNewPostViewModel())
             }
-        }
         .onAppear {
             viewModel.fetchPosts()
         }
@@ -66,8 +64,9 @@ struct PostsList_Previews: PreviewProvider {
             
             let postsRepository = PostsRepositoryStub(state: state)
             let viewModel = PostsViewModel(postsRepository: postsRepository)
-                    PostsList(viewModel: viewModel)
-            
+            NavigationStack {
+                PostsList(viewModel: viewModel)
+            }
         }
     }
     

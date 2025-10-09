@@ -14,10 +14,14 @@ struct MainTabView: View {
     var body: some View {
         TabView{
             Tab("Posts", systemImage: "list.dash"){
-                PostsList(viewModel: factory.makePostsViewModel())
+                NavigationStack {
+                    PostsList(viewModel: factory.makePostsViewModel())
+                }
             }
             Tab("Favorites", systemImage: "heart"){
-                PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))
+                NavigationStack {
+                    PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))
+                }
             }
             Tab("Profile", systemImage: "person"){
                 ProfileView()

@@ -11,7 +11,6 @@ struct PostRow: View {
     
     @ObservedObject var viewModel : PostRowViewModel
 
-    
     @State private var showConfirmationDialog = false
     
     var body: some View {
