@@ -10,6 +10,8 @@ import SwiftUI
 struct PostRow: View {
     
     @ObservedObject var viewModel : PostRowViewModel
+    
+    @EnvironmentObject private var factory: ViewModelFactory
 
     @State private var showConfirmationDialog = false
     
@@ -28,8 +30,13 @@ struct PostRow: View {
             Text(viewModel.content)
             HStack{
                 FavoriteButton(isFavorite: viewModel.isFavorite, action: viewModel.favoritePost)
+                NavigationLink{
+                    CommentsList(viewModel: factory.makeCommentsViewModel(for: viewModel.post))
+                } label: {
+                    Label("Comments", systemImage: "text.bubble")
+                        .foregroundColor(.secondary)
+                }
                 Spacer()
-                
                 if viewModel.canDeletePost{
                     Button(role: .destructive, action: {
                         showConfirmationDialog = true
@@ -37,8 +44,10 @@ struct PostRow: View {
                         Label("Delete", systemImage: "trash")
                     }
                 }
+
             }
             .buttonStyle(.borderless)
+            .labelStyle(.iconOnly)
         }
         .confirmationDialog("Are you sure you want to delete this post?", isPresented: $showConfirmationDialog, titleVisibility: .visible){
             Button("Delete", role: .destructive, action: viewModel.deletePost)
