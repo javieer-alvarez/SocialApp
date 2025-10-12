@@ -11,6 +11,8 @@ struct CommentsList: View {
     
     @StateObject var viewModel: CommentsViewModel
     
+    @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         Group{
             switch viewModel.comments {
@@ -29,25 +31,27 @@ struct CommentsList: View {
                     )
             case .empty:
                 EmptyListView(title: "No comments", message: "Be the first one to comment!")
-                    .toolbar{
-                        ToolbarItem(placement: .bottomBar) {
-                            NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
-                        }
-                    }
             case let .loaded(comments):
                 List(comments){ comment in
                     CommentRow(viewModel: viewModel.makeCommentRowViewModel(for: comment))
-                }
-                .toolbar{
-                    ToolbarItem(placement: .bottomBar) {
-                        NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
-                    }
                 }
                 .animation(.default, value: comments)
             }
         }
         .navigationTitle("Comments")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar{
+            ToolbarItem(placement: .topBarTrailing) {
+                Button{
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                }
+            }
+            ToolbarItem(placement: .bottomBar) {
+                NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
+            }
+        }
     }
 }
 
