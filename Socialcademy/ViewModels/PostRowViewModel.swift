@@ -8,7 +8,7 @@ import SwiftUI
 
 @MainActor
 @dynamicMemberLookup
-class PostRowViewModel: ObservableObject{
+class PostRowViewModel: ObservableObject, ErrorHandler{
     
     typealias Action = () async throws -> Void
     
@@ -31,19 +31,6 @@ class PostRowViewModel: ObservableObject{
         self.deleteAction = deleteAction
         self.favoriteAction = favoriteAction
         self.currentFilter = currentFilter
-    }
-    
-    
-    private func withErrorHandlingTask(perform action: @escaping Action){
-        Task{
-            do{
-                try await action()
-            }
-            catch{
-                print("[PostRowViewModel] Coundn't perform action \(error)")
-                self.error = error
-            }
-        }
     }
     
     func deletePost(){

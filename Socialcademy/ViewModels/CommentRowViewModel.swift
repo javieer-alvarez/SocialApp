@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 @dynamicMemberLookup
-class CommentRowViewModel: ObservableObject {
+class CommentRowViewModel: ObservableObject, ErrorHandler {
     
     typealias Action = () async throws -> Void
     
@@ -31,13 +31,6 @@ class CommentRowViewModel: ObservableObject {
     
     func deleteComment() {
         guard let deleteAction = deleteAction else { preconditionFailure("Cannot delete comment: no delete action provided")}
-        Task{
-            do {
-                try await deleteAction()
-            } catch {
-                print("[CommentRowViewModel] Cannot delete comment: \(error)")
-                self.error = error
-            }
-        }
+        withErrorHandlingTask(perform: deleteAction)
     }
 }
