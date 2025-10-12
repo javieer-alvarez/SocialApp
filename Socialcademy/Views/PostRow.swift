@@ -18,6 +18,8 @@ struct PostRow: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
+            
+            //MARK: - INFO
             HStack {
                 AuthorView(author: viewModel.author, currentFilter: viewModel.currentFilter)
                 Spacer()
@@ -29,6 +31,8 @@ struct PostRow: View {
                 .font(.title3)
                 .fontWeight(.semibold)
             Text(viewModel.content)
+            
+            //MARK: - ACTIONS
             HStack{
                 FavoriteButton(isFavorite: viewModel.isFavorite, action: viewModel.favoritePost)
                 Button{
