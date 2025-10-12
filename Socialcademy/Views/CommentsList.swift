@@ -17,7 +17,11 @@ struct CommentsList: View {
         Group{
             switch viewModel.comments {
             case .loading:
-                ProgressView()
+                VStack{
+                    ProgressView()
+                    Text("Loading...")
+                        .foregroundStyle(.gray)
+                }
                     .onAppear{
                         viewModel.fetchComments()
                     }
@@ -29,7 +33,7 @@ struct CommentsList: View {
                         viewModel.fetchComments()
                     }
                     )
-            case .empty:
+            case let .loaded(comments) where comments.isEmpty:
                 EmptyListView(title: "No comments", message: "Be the first one to comment!")
             case let .loaded(comments):
                 List(comments){ comment in

@@ -52,7 +52,7 @@ struct CommentsRepository: CommentsRepositoryProtocol {
     
     func fetchComments() async throws -> [Comment] {
         return try await commentsReference
-            .order(by: "timestamp", descending: true)
+            .order(by: "date", descending: true)
             .getDocuments(as: Comment.self)
     }
     

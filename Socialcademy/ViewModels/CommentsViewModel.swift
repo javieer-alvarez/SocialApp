@@ -21,7 +21,8 @@ class CommentsViewModel: ObservableObject {
     func fetchComments(){
         Task{
             do{
-                comments = .loaded(try await commentsRepository.fetchComments())
+                let value = try await commentsRepository.fetchComments()
+                comments = .loaded(value)
             }
             catch {
                 print("[CommentsViewModel] Error loading comments \(error)")
