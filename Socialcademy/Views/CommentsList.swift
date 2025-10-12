@@ -38,12 +38,12 @@ struct CommentsList: View {
                 List(comments){ comment in
                     CommentRow(viewModel: viewModel.makeCommentRowViewModel(for: comment))
                 }
-                .animation(.default, value: comments)
                 .toolbar{
                     ToolbarItem(placement: .bottomBar) {
                         NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
                     }
                 }
+                .animation(.default, value: comments)
             }
         }
         .navigationTitle("Comments")
@@ -71,7 +71,7 @@ private extension CommentsList {
             .animation(.default, value: viewModel.isWorking)
             .disabled(viewModel.isWorking)
             .onSubmit(viewModel.submit)
-            .padding()
+            .padding(.horizontal, 9)
         }
     }
 }
