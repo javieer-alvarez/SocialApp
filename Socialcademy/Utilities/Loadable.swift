@@ -57,8 +57,8 @@ extension Loadable{
     func simulate() async throws -> Value {
         switch self {
         case .loading:
-            try await Task.sleep(nanoseconds: 10 * 1_000_000_000)
-            fatalError("Timeout exceeded for loading case preview")
+            try await Task.sleep(nanoseconds: .max)
+            throw CancellationError()
         case let .error(error):
             throw error
         case let .loaded(value):

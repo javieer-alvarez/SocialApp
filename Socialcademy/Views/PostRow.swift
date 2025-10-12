@@ -14,6 +14,7 @@ struct PostRow: View {
     @EnvironmentObject private var factory: ViewModelFactory
 
     @State private var showConfirmationDialog = false
+    @State private var showCommentSection = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -30,11 +31,16 @@ struct PostRow: View {
             Text(viewModel.content)
             HStack{
                 FavoriteButton(isFavorite: viewModel.isFavorite, action: viewModel.favoritePost)
-                NavigationLink{
-                    CommentsList(viewModel: factory.makeCommentsViewModel(for: viewModel.post))
+                Button{
+                    showCommentSection = true
                 } label: {
                     Label("Comments", systemImage: "text.bubble")
                         .foregroundColor(.secondary)
+                }
+                .sheet(isPresented: $showCommentSection){
+                    NavigationStack {
+                        CommentsList(viewModel: factory.makeCommentsViewModel(for: viewModel.post))
+                    }
                 }
                 Spacer()
                 if viewModel.canDeletePost{

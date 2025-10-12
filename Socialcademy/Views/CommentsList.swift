@@ -29,15 +29,50 @@ struct CommentsList: View {
                     )
             case .empty:
                 EmptyListView(title: "No comments", message: "Be the first one to comment!")
+                    .toolbar{
+                        ToolbarItem(placement: .bottomBar) {
+                            NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
+                        }
+                    }
             case let .loaded(comments):
                 List(comments){ comment in
                     CommentRow(comment: comment)
                 }
                 .animation(.default, value: comments)
+                .toolbar{
+                    ToolbarItem(placement: .bottomBar) {
+                        NewCommentForm(viewModel: viewModel.makeNewCommentViewModel())
+                    }
+                }
             }
         }
         .navigationTitle("Comments")
         .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+private extension CommentsList {
+    struct NewCommentForm: View {
+        @StateObject var viewModel: FormViewModel<Comment>
+        
+        var body: some View {
+            HStack{
+                TextField("Comment", text: $viewModel.content)
+                Button(action: viewModel.submit) {
+                    if viewModel.isWorking {
+                        ProgressView()
+                    }
+                    else {
+                        Image(systemName: "paperplane")
+                    }
+                }
+            }
+            .alert("Cannot Post Comment", error: $viewModel.error)
+            .animation(.default, value: viewModel.isWorking)
+            .disabled(viewModel.isWorking)
+            .onSubmit(viewModel.submit)
+            .padding()
+        }
     }
 }
 
@@ -61,7 +96,7 @@ private func commentsList(state: Loadable<[Comment]>) -> some View {
     commentsList(state: .loading)
 }
 
-#Preview("Loaded", traits: .defaultLayout) {
+#Preview("Empty", traits: .defaultLayout) {
     commentsList(state: .empty)
 }
 
