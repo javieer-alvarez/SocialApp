@@ -11,6 +11,7 @@
 		A11A21D22E6605900015D48F /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21D12E6605900015D48F /* FirebaseAnalyticsCore */; };
 		A11A21DA2E6605900015D48F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21D92E6605900015D48F /* FirebaseAuth */; };
 		A11A21DE2E6605900015D48F /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = A11A21DD2E6605900015D48F /* FirebaseCore */; };
+		A12ECE942EA31A6E003A7707 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A12ECE932EA31A6E003A7707 /* FirebaseStorage */; };
 		A1BE69292E8711050003DC64 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = A1BE69282E8711050003DC64 /* FirebaseFirestore */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 				A11A21DA2E6605900015D48F /* FirebaseAuth in Frameworks */,
 				A1BE69292E8711050003DC64 /* FirebaseFirestore in Frameworks */,
 				A11A21DE2E6605900015D48F /* FirebaseCore in Frameworks */,
+				A12ECE942EA31A6E003A7707 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +93,7 @@
 				A11A21D92E6605900015D48F /* FirebaseAuth */,
 				A11A21DD2E6605900015D48F /* FirebaseCore */,
 				A1BE69282E8711050003DC64 /* FirebaseFirestore */,
+				A12ECE932EA31A6E003A7707 /* FirebaseStorage */,
 			);
 			productName = Socialcademy;
 			productReference = A11A21BE2E6603C60015D48F /* Socialcademy.app */;
@@ -387,6 +390,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A11A21CC2E6605900015D48F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCore;
+		};
+		A12ECE932EA31A6E003A7707 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A11A21CC2E6605900015D48F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 		A1BE69282E8711050003DC64 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
