@@ -19,22 +19,9 @@
 		A11A21BE2E6603C60015D48F /* Socialcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A12ECE9C2EA45E74003A7707 /* Exceptions for "Socialcademy" folder in "Socialcademy" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = A11A21BD2E6603C60015D48F /* Socialcademy */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A11A21C02E6603C60015D48F /* Socialcademy */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				A12ECE9C2EA45E74003A7707 /* Exceptions for "Socialcademy" folder in "Socialcademy" target */,
-			);
 			path = Socialcademy;
 			sourceTree = "<group>";
 		};
