@@ -23,6 +23,7 @@ struct NewPostForm: View {
                 Section("Content") {
                     TextEditor(text: $viewModel.content)
                         .multilineTextAlignment(.leading)
+                        .frame(height: 75)
                 }
                 Button(action: viewModel.submit) {
                     if viewModel.isWorking {
@@ -56,13 +57,15 @@ private extension NewPostForm {
         
         var body: some View {
             Section("Image") {
-                AsyncImage(url: imageURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                } placeholder: {
-                    EmptyView()
+                if let imageURL = imageURL {
+                    AsyncImage(url: imageURL) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    } placeholder: {
+                        EmptyView()
+                    }
                 }
                 ImagePickerButton(imageURL: $imageURL) {
                     Label("Choose Image", systemImage: "photo.fill")
