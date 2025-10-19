@@ -24,7 +24,7 @@ struct MainTabView: View {
                 }
             }
             Tab("Profile", systemImage: "person"){
-                ProfileView()
+                ProfileView(viewModel: factory.makeProfileViewModel())
             }
         }
     }

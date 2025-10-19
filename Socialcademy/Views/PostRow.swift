@@ -138,5 +138,5 @@ private extension PostRow {
 
 #Preview(traits: .sizeThatFitsLayout) {
     PostRow(viewModel: PostRowViewModel(post: Post.testPost, deleteAction: {}, favoriteAction: {}, currentFilter: .all))
-        .environmentObject(ViewModelFactory(user: User.testUser))
+        .environmentObject(ViewModelFactory(user: User.testUser, authService: AuthService()))
 }
