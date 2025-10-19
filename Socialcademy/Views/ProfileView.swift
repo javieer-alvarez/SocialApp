@@ -18,6 +18,7 @@ struct ProfileView: View {
                 Spacer()
                 AsyncImage(url: viewModel.imageURL)
                     .frame(width: 200, height: 200)
+                    .clipShape(Circle())
                 Spacer()
                 Text(viewModel.name)
                     .font(.title2)
