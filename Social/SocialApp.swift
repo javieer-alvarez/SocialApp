@@ -1,5 +1,5 @@
 //
-//  SocialcademyApp.swift
+//  SocialApp.swift
 //  Socialcademy
 //
 //  Created by Javier Ignacio Alvarez Izaguirre on 1/9/25.
@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 @main
-struct SocialcademyApp: App {
+struct SocialApp: App {
     init() {
         FirebaseApp.configure()
     }

@@ -16,26 +16,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A11A21BE2E6603C60015D48F /* Socialcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Socialcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A11A21BE2E6603C60015D48F /* Social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Social.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		A12ECEA62EA5A0B3003A7707 /* Exceptions for "Socialcademy" folder in "Socialcademy" target */ = {
+		A12ECEA62EA5A0B3003A7707 /* Exceptions for "Social" folder in "Social" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = A11A21BD2E6603C60015D48F /* Socialcademy */;
+			target = A11A21BD2E6603C60015D48F /* Social */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		A11A21C02E6603C60015D48F /* Socialcademy */ = {
+		A11A21C02E6603C60015D48F /* Social */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				A12ECEA62EA5A0B3003A7707 /* Exceptions for "Socialcademy" folder in "Socialcademy" target */,
+				A12ECEA62EA5A0B3003A7707 /* Exceptions for "Social" folder in "Social" target */,
 			);
-			path = Socialcademy;
+			path = Social;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -60,7 +60,7 @@
 		A11A21B52E6603C60015D48F = {
 			isa = PBXGroup;
 			children = (
-				A11A21C02E6603C60015D48F /* Socialcademy */,
+				A11A21C02E6603C60015D48F /* Social */,
 				A1BE69272E8711050003DC64 /* Frameworks */,
 				A11A21BF2E6603C60015D48F /* Products */,
 			);
@@ -69,7 +69,7 @@
 		A11A21BF2E6603C60015D48F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A11A21BE2E6603C60015D48F /* Socialcademy.app */,
+				A11A21BE2E6603C60015D48F /* Social.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -84,9 +84,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A11A21BD2E6603C60015D48F /* Socialcademy */ = {
+		A11A21BD2E6603C60015D48F /* Social */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A11A21C92E6603C70015D48F /* Build configuration list for PBXNativeTarget "Socialcademy" */;
+			buildConfigurationList = A11A21C92E6603C70015D48F /* Build configuration list for PBXNativeTarget "Social" */;
 			buildPhases = (
 				A11A21BA2E6603C60015D48F /* Sources */,
 				A11A21BB2E6603C60015D48F /* Frameworks */,
@@ -97,9 +97,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				A11A21C02E6603C60015D48F /* Socialcademy */,
+				A11A21C02E6603C60015D48F /* Social */,
 			);
-			name = Socialcademy;
+			name = Social;
 			packageProductDependencies = (
 				A11A21CF2E6605900015D48F /* FirebaseAnalytics */,
 				A11A21D12E6605900015D48F /* FirebaseAnalyticsCore */,
@@ -109,7 +109,7 @@
 				A12ECE932EA31A6E003A7707 /* FirebaseStorage */,
 			);
 			productName = Socialcademy;
-			productReference = A11A21BE2E6603C60015D48F /* Socialcademy.app */;
+			productReference = A11A21BE2E6603C60015D48F /* Social.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A11A21B92E6603C60015D48F /* Build configuration list for PBXProject "Socialcademy" */;
+			buildConfigurationList = A11A21B92E6603C60015D48F /* Build configuration list for PBXProject "Social" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -144,7 +144,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A11A21BD2E6603C60015D48F /* Socialcademy */,
+				A11A21BD2E6603C60015D48F /* Social */,
 			);
 		};
 /* End PBXProject section */
@@ -303,7 +303,7 @@
 				DEVELOPMENT_TEAM = 2NRTP42UVQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Socialcademy/Info.plist;
+				INFOPLIST_FILE = Social/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This let's you add photos to your profile and posts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -316,7 +316,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JavierAlvarez.Socialcademy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JavierAlvarez.Social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -334,7 +334,7 @@
 				DEVELOPMENT_TEAM = 2NRTP42UVQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Socialcademy/Info.plist;
+				INFOPLIST_FILE = Social/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This let's you add photos to your profile and posts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -347,7 +347,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.JavierAlvarez.Socialcademy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JavierAlvarez.Social;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -358,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A11A21B92E6603C60015D48F /* Build configuration list for PBXProject "Socialcademy" */ = {
+		A11A21B92E6603C60015D48F /* Build configuration list for PBXProject "Social" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A11A21C72E6603C70015D48F /* Debug */,
@@ -367,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A11A21C92E6603C70015D48F /* Build configuration list for PBXNativeTarget "Socialcademy" */ = {
+		A11A21C92E6603C70015D48F /* Build configuration list for PBXNativeTarget "Social" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A11A21CA2E6603C70015D48F /* Debug */,
