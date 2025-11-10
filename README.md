@@ -81,10 +81,10 @@ This structure ensures **scalability**, **testability**, and **clarity** in data
 ## 📸 Some Screenshots
 
 <div align="center">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/favorites.imageset/favorites.PNG" alt="Favorites View" width="225">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/comments.imageset/comments.PNG" alt="Comments View" width="225">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/profile.imageset/profile.PNG" alt="Profile View" width="225">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/login.imageset/login.PNG" alt="LogIn View" width="230">
+<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/favorites.imageset/favorites.PNG" alt="Favorites View" width="300">
+<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/comments.imageset/comments.PNG" alt="Comments View" width="300">
+<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/profile.imageset/profile.PNG" alt="Profile View" width="300">
+<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/login.imageset/login.PNG" alt="LogIn View" width="300">
 </div>
 
 ---
