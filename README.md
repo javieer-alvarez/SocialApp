@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/AppIcon.appiconset/AppIcon.png" alt="App Icon" width="400"">
+<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/AppIconRounded.imageset/AppIconRounded.png" alt="App Icon" width="400"">
 </div>
 
 # Social
