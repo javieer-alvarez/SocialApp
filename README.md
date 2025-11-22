@@ -48,7 +48,7 @@ It’s a clean, scalable Swift app designed to explore backend integration, auth
 
 ### Prerequisites
 - **Xcode 16.0** or later  
-- **iOS 18.5+** deployment target  
+- **iOS 18+** deployment target  
 - Firebase project setup (to obtain your GoogleService-Info.plist)
 
 ### Setup Instructions
