@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/AppIconRounded.imageset/AppIconRounded.png" alt="App Icon" width="400"">
+<img width="400" alt="AppIconRounded" src="https://github.com/user-attachments/assets/4e94690c-d4c6-41a8-aa47-528315e94543" />
 </div>
 
 # Social
@@ -7,7 +7,7 @@
 A modern SwiftUI social networking app that lets users share photos, write posts, and interact through comments — all powered by Firebase.
 
 <div align="center">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/posts.imageset/posts.PNG" alt="Posts View" width="400">
+<img width="400" alt="posts" src="https://github.com/user-attachments/assets/2c0b5c3a-1b8f-409e-8c30-48ce62369480" />
 </div>
 
 ## 📱 Overview
@@ -81,10 +81,10 @@ This structure ensures **scalability**, **testability**, and **clarity** in data
 ## 📸 Some Screenshots
 
 <div align="center">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/favorites.imageset/favorites.PNG" alt="Favorites View" width="300">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/comments.imageset/comments.PNG" alt="Comments View" width="300">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/profile.imageset/profile.PNG" alt="Profile View" width="300">
-<img src="https://github.com/javieer-alvarez/SocialApp/blob/main/Social/Assets.xcassets/login.imageset/login.PNG" alt="LogIn View" width="300">
+<img width="300" alt="favorites" src="https://github.com/user-attachments/assets/b73b4fbe-3a59-41a4-a12a-d194ce337ea9" />
+<img width="300" alt="comments" src="https://github.com/user-attachments/assets/86161869-357b-432a-98a6-19fdaa169fc5" />
+<img width="300" alt="profile" src="https://github.com/user-attachments/assets/0f016d77-b2d6-4813-9bce-97e9f243384f" />
+<img width="300" alt="login" src="https://github.com/user-attachments/assets/75e63bcf-a3b1-43cc-be03-cf36f4341027" />
 </div>
 
 ---
