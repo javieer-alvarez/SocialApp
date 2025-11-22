@@ -4,6 +4,15 @@
 
 # Social
 
+<div align="center">
+
+![Swift](https://img.shields.io/badge/Swift-6.2.1-orange?style=for-the-badge&logo=swift)
+![Platform](https://img.shields.io/badge/iOS-17+-lightgrey?style=for-the-badge&logo=apple)
+![Backend](https://img.shields.io/badge/Backend-Firebase-yellow?style=for-the-badge&logo=firebase)
+![Architecture](https://img.shields.io/badge/Architecture-MVVM-blue?style=for-the-badge)
+
+</div>
+
 A modern SwiftUI social networking app that lets users share photos, write posts, and interact through comments — all powered by Firebase.
 
 <div align="center">
